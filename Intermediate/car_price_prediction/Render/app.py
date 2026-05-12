@@ -75,4 +75,4 @@ def predict():
     return render_template("index.html", prediction_text=f"₹{output} Lakhs", warning=warning)
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run()
