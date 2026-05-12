@@ -1,6 +1,7 @@
 import pickle
 import numpy as np
 import pandas as pd
+from datetime import datetime
 from flask import Flask, request, render_template
 
 app = Flask(__name__)
@@ -28,7 +29,7 @@ def predict():
     # --- encode exactly as the notebook did ---
 
     # Car_Age: notebook used 2026 - Year
-    car_age = 2026 - year
+    car_age = datetime.now().year - year
 
     # get_dummies(drop_first=True) keeps Diesel & Petrol, drops CNG (the "first" alphabetically)
     fuel_diesel = 1 if fuel_type == "Diesel" else 0
